@@ -147,5 +147,5 @@ namespace countdown {
     }
 }
 
-new countdown.Clock()
+// new countdown.Clock()
 
