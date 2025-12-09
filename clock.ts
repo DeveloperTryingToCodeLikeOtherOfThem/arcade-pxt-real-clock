@@ -8,6 +8,12 @@ namespace countdown {
     //% shim=browserEvents::getSeconds
     declare function getSeconds(time: number): number;
 
+    //% blockId="clock_create" block="create"
+    //% blockSetVariable="clock"
+    export function create(): Clock {
+        return new Clock();
+    }
+
     export class Clock {
          private _hours: number;
          private _minutes: number;
@@ -25,6 +31,7 @@ namespace countdown {
              this.createClock();
          }
 
+         //% blockId="clock_set_time" block="$this(timer) %hour %minute %second"
         setTime?(hour: number, minute: number, second?: number) {
          this._hours = hour;
          this._minutes = minute;
