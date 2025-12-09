@@ -9,7 +9,7 @@ namespace countdown {
     declare function getSeconds(time: number): number;
 
     //% blockId="clock_create" block="create"
-    //% blockSetVariable="clock"
+    //% blockSetVariable="clock" weight=100
     export function create(): Clock {
         return new Clock();
     }
@@ -31,7 +31,8 @@ namespace countdown {
              this.createClock();
          }
 
-         //% blockId="clock_set_time" block="$this(timer) %hour %minute %second"
+         //% blockId="clock_set_time" block="$this(clock) %hour %minute %second"
+         //% weight=99
         setTime?(hour: number, minute: number, second?: number) {
          this._hours = hour;
          this._minutes = minute;
